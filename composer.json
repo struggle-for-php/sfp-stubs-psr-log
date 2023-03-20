@@ -1,5 +1,5 @@
 {
-    "name": "struggle-for-php/sfp-stub-psr-log",
+    "name": "struggle-for-php/sfp-stubs-psr-log",
     "description": "Stubs to let Static Analysis understand psr/log (PSR-3)",
     "keywords": ["stub", "static analysis", "static-analysis", "psr3"],
     "type": "library",
@@ -21,7 +21,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "SfpTest\\Stub\\Psr\\Log\\": "tests"
+            "SfpTest\\Stubs\\Psr\\Log\\": "tests"
         }
     },
     "config": {

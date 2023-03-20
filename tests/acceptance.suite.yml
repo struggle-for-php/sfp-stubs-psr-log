@@ -10,4 +10,4 @@ modules:
         - Cli
         - Filesystem
         - \Weirdan\Codeception\Psalm\Module
-        - \SfpTest\Stub\Psr\Log\Helper\Acceptance
+        - \SfpTest\Stubs\Psr\Log\Helper\Acceptance
