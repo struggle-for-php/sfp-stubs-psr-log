@@ -1,6 +1,6 @@
 <?php
 
-namespace SfpTest\Stub\Psr\Log;
+namespace SfpTest\Stubs\Psr\Log;
 
 /**
  * Inherited Methods

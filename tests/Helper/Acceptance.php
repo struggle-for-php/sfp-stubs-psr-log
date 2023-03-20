@@ -1,6 +1,6 @@
 <?php
 
-namespace SfpTest\Stub\Psr\Log\Helper;
+namespace SfpTest\Stubs\Psr\Log\Helper;
 
 class Acceptance extends \Codeception\Module
 {

@@ -1,4 +1,4 @@
-namespace: SfpTest\Stub\Psr\Log
+namespace: SfpTest\Stubs\Psr\Log
 paths:
     tests: tests
     output: tests/_output
