@@ -1,0 +1,16 @@
+/.github/ export-ignore
+/benchmark/ export-ignore
+/docs/ export-ignore
+/tests/ export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/.laminas-ci.json export-ignore
+/phpbench.json
+/phpcs.xml export-ignore
+/phpunit.xml.dist export-ignore
+/psalm.xml
+/psalm-baseline.xml
+/mkdocs.yml export-ignore
+
+/examples/ export-ignore
+/vendor-bin/ export-ignore
