@@ -1,7 +1,0 @@
-{
-  "ignore_php_platform_requirements": {
-    "7.2": true,
-    "7.3": true
-  },
-  "stablePHP": "7.4"
-}
