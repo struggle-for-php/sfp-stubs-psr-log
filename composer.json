@@ -1,7 +1,7 @@
 {
     "name": "struggle-for-php/sfp-stubs-psr-log",
     "description": "Stubs to let Static Analysis understand psr/log (PSR-3)",
-    "keywords": ["stub", "static analysis", "static-analysis", "psr3"],
+    "keywords": ["stub", "stubs", "static analysis", "static-analysis", "psr3", "log", "exception"],
     "type": "library",
     "license": "MIT",
     "authors": [
