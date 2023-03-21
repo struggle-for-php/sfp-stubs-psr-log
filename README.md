@@ -7,6 +7,11 @@ This repository is aimed for used by these.
  - https://github.com/struggle-for-php/sfp-phpstan-psr-log
 
 But, You can use this for individual purpose.
+Add the following files to your stub settings.
+```
+stubs-for-throwable/LoggerInterface.phpstub
+stubs-for-throwable/AbstractLogger.phpstub
+```
 
 ## Features
 
@@ -35,6 +40,13 @@ The PSR-3 specification states `Exception` but we have confirmed with PHP-FIG th
 https://groups.google.com/g/php-fig/c/nnwDWSFmij8
 
 ### `level` parameter of `log` method is a constant enum of LogLevels::*.
+
+```php
+/**
+ * @param LogLevel::*  $level
+ */
+public function log($level, $message, array $context = array())
+```
 
 ## Not Support (Not planned)
 
