@@ -15,5 +15,5 @@
 /examples/ export-ignore
 /vendor-bin/ export-ignore
 
-
 /codeception.yml export-ignore
+/build/ export-ignore
