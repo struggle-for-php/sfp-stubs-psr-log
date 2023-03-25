@@ -1,15 +1,11 @@
 #!/usr/bin/env bash
 
 ## stubs-for-exception
-cp vendor/psr/log/Psr/Log/LoggerInterface.php stubs-for-exception/LoggerInterface.php
-cp vendor/psr/log/Psr/Log/AbstractLogger.php stubs-for-exception/AbstractLogger.php
+cp vendor/psr/log/src/LoggerInterface.php stubs-for-exception/LoggerInterface.php
 vendor/bin/rector process --config=build/rector-stubs-for-exception.php --clear-cache --no-diffs
 mv stubs-for-exception/LoggerInterface.php stubs-for-exception/LoggerInterface.phpstub
-mv stubs-for-exception/AbstractLogger.php stubs-for-exception/AbstractLogger.phpstub
 
 ## stubs-for-throwable
-cp vendor/psr/log/Psr/Log/LoggerInterface.php stubs-for-throwable/LoggerInterface.php
-cp vendor/psr/log/Psr/Log/AbstractLogger.php stubs-for-throwable/AbstractLogger.php
+cp vendor/psr/log/src/LoggerInterface.php stubs-for-throwable/LoggerInterface.php
 vendor/bin/rector process --config=build/rector-stubs-for-throwable.php --clear-cache --no-diffs
 mv stubs-for-throwable/LoggerInterface.php stubs-for-throwable/LoggerInterface.phpstub
-mv stubs-for-throwable/AbstractLogger.php stubs-for-throwable/AbstractLogger.phpstub

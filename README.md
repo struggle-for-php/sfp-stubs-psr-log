@@ -10,7 +10,6 @@ But, You can use this for individual purpose.
 Add the following files to your stub settings.
 ```
 stubs-for-throwable/LoggerInterface.phpstub
-stubs-for-throwable/AbstractLogger.phpstub
 ```
 
 ## Features
@@ -50,6 +49,5 @@ public function log($level, $message, array $context = array())
 
 ## Not Support (Not planned)
 
-- Stub `LoggerAwareTrait` with @psalm-require-implements
-  - https://psalm.dev/docs/annotating_code/supported_annotations/#psalm-require-implements
+- Stub `LoggerAwareTrait`
 
