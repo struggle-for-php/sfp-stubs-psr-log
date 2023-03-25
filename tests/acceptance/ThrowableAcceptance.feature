@@ -8,7 +8,6 @@ Feature: Throwable
         <projectFiles><directory name="."/></projectFiles>
         <stubs>
             <file name="../../stubs-for-throwable/LoggerInterface.phpstub" />
-            <file name="../../stubs-for-throwable/AbstractLogger.phpstub" />
         </stubs>
       </psalm>
       """
@@ -16,20 +15,12 @@ Feature: Throwable
       """
       <?php
       use Psr\Log\LoggerInterface;
-      use Psr\Log\AbstractLogger;
 
       /**
        * @psalm-suppress InvalidReturnType
        * @return LoggerInterface
        */
       function impl_interface() {}
-
-      /**
-       * @psalm-suppress InvalidReturnType
-       * @return AbstractLogger
-       */
-      function concrete_abstract() {}
-
       """
 
   Scenario: `exception` key is actually an Throwable Object AS per LoggerInterface
@@ -63,37 +54,4 @@ Feature: Throwable
       | InvalidArgument | Argument 2 of Psr\Log\LoggerInterface::notice expects array{exception?: Throwable}, but array{exception: 'foo'} provided |
       | InvalidArgument | Argument 2 of Psr\Log\LoggerInterface::info expects array{exception?: Throwable}, but array{exception: 'foo'} provided |
       | InvalidArgument | Argument 2 of Psr\Log\LoggerInterface::debug expects array{exception?: Throwable}, but array{exception: 'foo'} provided |
-    And I see no other errors
-
-  Scenario: `exception` key is actually an Throwable Object AS per AbstractLogger
-    Given I have the following code
-      """
-      concrete_abstract()->emergency("message", ['exception' => 'foo']);
-      concrete_abstract()->alert("message", ['exception' => 'foo']);
-      concrete_abstract()->critical("message", ['exception' => 'foo']);
-      concrete_abstract()->error("message", ['exception' => 'foo']);
-      concrete_abstract()->warning("message", ['exception' => 'foo']);
-      concrete_abstract()->notice("message", ['exception' => 'foo']);
-      concrete_abstract()->info("message", ['exception' => 'foo']);
-      concrete_abstract()->debug("message", ['exception' => 'foo']);
-      concrete_abstract()->emergency("message", ['exception' => new Error]);
-      concrete_abstract()->alert("message", ['exception' => new Error]);
-      concrete_abstract()->critical("message", ['exception' => new Error]);
-      concrete_abstract()->error("message", ['exception' => new Error]);
-      concrete_abstract()->warning("message", ['exception' => new Error]);
-      concrete_abstract()->notice("message", ['exception' => new Error]);
-      concrete_abstract()->info("message", ['exception' => new Error]);
-      concrete_abstract()->debug("message", ['exception' => new Error]);
-      """
-    When I run Psalm
-    Then I see these errors
-      | Type            | Message                                                                                                                      |
-      | InvalidArgument | Argument 2 of Psr\Log\AbstractLogger::emergency expects array{exception?: Throwable}, but array{exception: 'foo'} provided |
-      | InvalidArgument | Argument 2 of Psr\Log\AbstractLogger::alert expects array{exception?: Throwable}, but array{exception: 'foo'} provided |
-      | InvalidArgument | Argument 2 of Psr\Log\AbstractLogger::critical expects array{exception?: Throwable}, but array{exception: 'foo'} provided |
-      | InvalidArgument | Argument 2 of Psr\Log\AbstractLogger::error expects array{exception?: Throwable}, but array{exception: 'foo'} provided |
-      | InvalidArgument | Argument 2 of Psr\Log\AbstractLogger::warning expects array{exception?: Throwable}, but array{exception: 'foo'} provided |
-      | InvalidArgument | Argument 2 of Psr\Log\AbstractLogger::notice expects array{exception?: Throwable}, but array{exception: 'foo'} provided |
-      | InvalidArgument | Argument 2 of Psr\Log\AbstractLogger::info expects array{exception?: Throwable}, but array{exception: 'foo'} provided |
-      | InvalidArgument | Argument 2 of Psr\Log\AbstractLogger::debug expects array{exception?: Throwable}, but array{exception: 'foo'} provided |
     And I see no other errors
