@@ -1,6 +1,5 @@
-/vendor/
-vendor
-tests/_output
-tests/_run/*
+/vendor
+/tests/_output
+/tests/_run/*
 
 /.idea/
