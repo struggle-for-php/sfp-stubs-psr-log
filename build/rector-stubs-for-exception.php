@@ -5,7 +5,7 @@ use Rector\Config\RectorConfig;
 return static function (RectorConfig $config): void {
     $services = $config->services();
 
-    $config->phpVersion(\Rector\Core\ValueObject\PhpVersion::PHP_53);
+    $config->phpVersion(\Rector\Core\ValueObject\PhpVersion::PHP_80);
     $services->set(\SfpDev\Stubs\Psr\Log\ExceptionLoggerContextTypeRector::class);
 
     $config->paths([
